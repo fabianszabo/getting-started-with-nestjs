@@ -1,0 +1,27 @@
+meta {
+  name: POST Create Question
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{BASE_URL}}/questions
+  body: json
+  auth: inherit
+}
+
+headers {
+  X-API-Key: nobody should ever commit a secret key like this
+}
+
+body:json {
+  {
+    "question": "What is the largest planet in our solar system?",
+    "answer": "Jupiter"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

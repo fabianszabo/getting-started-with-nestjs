@@ -1,0 +1,26 @@
+meta {
+  name: POST Answer Question
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{BASE_URL}}/questions/{{ID}}/answer
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "answer": "Paris"
+  }
+}
+
+vars:pre-request {
+  ID: 1
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
